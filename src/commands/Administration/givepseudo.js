@@ -4,9 +4,8 @@ const {
   PermissionFlagsBits,
 } = require("discord.js");
 
-require("dotenv").config();
-
 const axios = require("axios");
+const { logMessage } = require("../../utils/logs");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -29,8 +28,10 @@ module.exports = {
     var nom;
     var guild = interaction.guild;
 
+    logMessage(interaction.client, `<@${interaction.user.id}> a utilisé la commande /givepseudo`);
+
     guild.members.cache.forEach(async (member) => {
-        if(member.id === process.env.CLIENT_ID) return;
+        if(member.user.bot ) return;
         if(await member.nickname !== null) return await console.log(member.nickname + " à déjà un nom rp")
 
       try {
@@ -44,8 +45,10 @@ module.exports = {
           const { name } = await response.data;
           await member.setNickname(name, "Renamed");
           nom = await name;
+          logMessage(interaction.client, `<@${member.user.id}> a été renommé`)
         } else {
           await member.setNickname("Pas de nom RP.", "Renamed");
+          logMessage(interaction.client, `<@${member.user.id}> a été renommé`)
         }
       } catch (error) {
         await console.error(

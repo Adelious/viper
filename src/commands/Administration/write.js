@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, messageLink, PermissionFlagsBits } = require("discord.js");
+const { logMessage } = require("../../utils/logs");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -16,7 +17,8 @@ module.exports = {
     message = interaction.options
       .getString("message")
       .replace(/<br\s*[\/]?>/gi, "\n");
-    await interaction.channel.send(message);
+    const sentMessage = await interaction.channel.send(message);
     await interaction.reply({ content: "Message envoyé", ephemeral: true });
+    logMessage(interaction.client, `<@${interaction.user.id}> a écrit un message avec /write : https://discord.com/channels/${interaction.guild.id}/${interaction.channel.id}/${sentMessage.id}`)
   },
 };

@@ -8,8 +8,7 @@ const {
   ButtonStyle,
 } = require("discord.js");
 const axios = require("axios");
-const { welcomeChannelID } = require("../../config.json");
-const { commandeCategoryID } = require("../../config.json");
+const { welcomeChannelID, commandeCategoryID, logChannelId} = require("../../config.json");
 
 (module.exports = {
   name: Events.GuildMemberAdd,
@@ -35,6 +34,7 @@ const { commandeCategoryID } = require("../../config.json");
           console.log(
             `${member.user.username} a rejoint le serveur et à été nommé ${name}.`
           );
+          logMessage(member.client, `<@${member.id} a rejoint le discord et été renommé`);
         } else {
           member.setNickname("Pas de nom RP.", "Renamed");
         }
@@ -47,6 +47,7 @@ const { commandeCategoryID } = require("../../config.json");
       member.user.send(
         ":x: Je ne parviens pas à vous assigner le nom et prénom RP sur le serveur.\nJe vous ai donc ouvert un ticket pour régler cela avec l'administration."
       );
+      logMessage(member.client, `<@${member.id} a rejoint le discord et un ticket a été ouvert`);
 
       // Création d'un ticket
       let ticketChannel = await member.guild.channels.create({

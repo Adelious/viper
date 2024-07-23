@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
-const { Client, Collection, GatewayIntentBits, EmbedBuilder } = require("discord.js");
+const { Client, Collection, GatewayIntentBits } = require("discord.js");
 require("dotenv").config();
+const { logChannelId } = require("./config.json");
 
 const client = new Client({
   intents: [

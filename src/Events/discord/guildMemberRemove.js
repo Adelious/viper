@@ -1,5 +1,6 @@
 const { Events, ActivityType } = require('discord.js');
 const { byeChannelID } = require("../../config.json");
+const { logMessage } = require('../../utils/logs.js');
 
 module.exports = {
 	name: Events.GuildMemberRemove,
@@ -11,5 +12,7 @@ module.exports = {
                 `\:wave: A bientôt **<@${member.user.id}>** dans la **Viper**`
             );
         }
+
+        logMessage(member.client, `<@${member.id}> a quitté le discord`);
 	},
 };

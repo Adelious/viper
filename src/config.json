@@ -1,11 +1,13 @@
 {
   "welcomeChannelID": "1253784903343018036",
   "byeChannelID": "1257056810616230018",
-  "commandeCategoryID": "1257679778467545119",
-  "commandeArchiveCategoryID": "1125523954124206261",
+  "commandeCategoryID": "1265284773413130364",
+  "commandeArchiveCategoryID": "1257679884348690462",
   "recrutementCategoryID": "1257679851859476580",
   "recrutementArchiveCategoryID": "1257679884348690462",
   "joueurRoleID": "1257079851165417503",
-  "joueurRoleCatID": "1257079702598844509"
-
+  "joueurRoleCatID": "1257079702598844509",
+  "autoVocChanneld" : "1265003063802859634",
+  "voiceCategoryId" : "1253784903791677509",
+  "logChannelId" : "1257061354146103399"
 }

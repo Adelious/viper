@@ -1,5 +1,6 @@
 const { Events, ActivityType } = require('discord.js');
 require("dotenv").config();
+const { logMessage } = require("../../utils/logs");
 
 module.exports = {
 	name: Events.ClientReady,
@@ -26,5 +27,7 @@ module.exports = {
 		    .catch(console.error);
 
 			await console.log(`Ready! Logged in as ${client.user.tag}`);
+
+			logMessage(client, "**BOT OPPERATIONNEL** !");
 	},
 };

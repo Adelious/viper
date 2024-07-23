@@ -8,7 +8,7 @@ module.exports = {
       .setColor(Colors.Purple)
       .setTitle("Candidater")
       .setThumbnail(interaction.client.user.displayAvatarURL({ dynamic: true }))
-      .setDescription("Création de")
+      .setDescription("Des questions vous seront posées afin de mieux vous connaitre.")
       .setTimestamp()
       .setFooter({
         text: interaction.client.user.username,
