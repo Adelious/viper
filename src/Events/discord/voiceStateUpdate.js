@@ -1,11 +1,11 @@
 const { Events, ChannelType } = require('discord.js');
-const { autoVocChanneld, voiceCategoryId } = require("../../config.json");
+const { autoVocChanneld, autoVocOrgaChanneld } = require("../../config.json");
 const { logMessage } = require('../../utils/logs.js');
 
 module.exports = {
     name: Events.VoiceStateUpdate,
     async execute(oldState, newState) {
-        if (newState.channelId === autoVocChanneld) {
+        if (newState.channelId === autoVocChanneld || newState.channelId === autoVocOrgaChanneld) {
             const member = newState.member;
 
             const channel = await newState.guild.channels.create({
@@ -13,7 +13,7 @@ module.exports = {
                 type: ChannelType.GuildVoice,
             });
 
-            await channel.setParent(voiceCategoryId);
+            await channel.setParent(newState.channel.parentId);
             await member.voice.setChannel(channel);
         }
 
