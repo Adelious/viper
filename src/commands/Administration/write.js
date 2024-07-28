@@ -19,6 +19,6 @@ module.exports = {
       .replace(/<br\s*[\/]?>/gi, "\n");
     const sentMessage = await interaction.channel.send(message);
     await interaction.reply({ content: "Message envoyé", ephemeral: true });
-    logMessage(interaction.client, `<@${interaction.user.id}> a écrit un message avec /write : https://discord.com/channels/${interaction.guild.id}/${interaction.channel.id}/${sentMessage.id}`)
+    logMessage(interaction.client, `<@${interaction.user.id}> a écrit un message avec /write : https://discord.com/channels/${interaction.guild.id}/${interaction.channel.id}/${sentMessage.id}`, ':green_square:');
   },
 };

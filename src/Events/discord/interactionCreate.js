@@ -75,7 +75,7 @@ module.exports = {
 
         await channel.send({ embeds: [embed], components: [button] });
 
-        logMessage(interaction.client, `<@${interaction.user.id}> a créer un ticket de **support** : <#${channel.id}>`);
+        logMessage(interaction.client, `<@${interaction.user.id}> a créer un ticket de **support** : <#${channel.id}>`, ':orange_square:');
       }
 
       if (interaction.customId === "close-ticket") {
@@ -98,7 +98,7 @@ module.exports = {
 
         await interaction.channel.setParent(commandeArchiveCategoryID);
 
-        logMessage(interaction.client, `<@${interaction.user.id}> a fermé un ticket de **support** : <#${channel.id}>`);
+        logMessage(interaction.client, `<@${interaction.user.id}> a fermé un ticket de **support** : <#${channel.id}>`, ':orange_square:');
       }
 
       // Bouton de verificétion deu règlement 
@@ -113,7 +113,7 @@ module.exports = {
             content: "Vous acceptez le règlement.",
             ephemeral: true,
           });
-          logMessage(interaction.client, `<@${interaction.user.id}> a accepté le règlement`);
+          logMessage(interaction.client, `<@${interaction.user.id}> a accepté le règlement`, ':orange_square:');
         } else {
           await interaction.reply({
             content: "Vous avez déjà accepter le règlement",
@@ -175,7 +175,7 @@ module.exports = {
 
         channel.send('➔ ** Informations**\n- Nom :\n- Prénom :\n- Âge :\n\n- De quelle organisations aviez vous fait parti avant ?\n- Pour quel motif l\'aviez vous quittée ?\n- Temps de jeu (Minimum 100h)( screenshot à l\'appui ) :\n- Image de vos avertissements ( screenshot à l\'appui ) :\n- Disponibilité :\n- Qualité / Défauts :\n\n➔ ** Candidature **\n- Motivations:\n- Pourquoi la Viper et pas une autre ? :\n- Pourquoi vous choisir ? :\n- Que représente la Viper pour vous ? :\n\n➔ **Information(s) supplémentaire(s) ** :\n- Description de vous ( attitude / conduite / comportement ... ) :');
 
-        logMessage(interaction.client, `<@${interaction.user.id}> a créer un ticket de **recrutement** : <#${channel.id}>`);
+        logMessage(interaction.client, `<@${interaction.user.id}> a créer un ticket de **recrutement** : <#${channel.id}>`, ':orange_square:');
 
       }
 
@@ -195,7 +195,7 @@ module.exports = {
 
         await interaction.channel.setParent(recrutementArchiveCategoryID);
 
-        logMessage(interaction.client, `<@${interaction.user.id}> a fermé un ticket de **recrutement** : <#${interaction.channel.id}>`);
+        logMessage(interaction.client, `<@${interaction.user.id}> a fermé un ticket de **recrutement** : <#${interaction.channel.id}>`, ':orange_square:');
       }
     }
   }

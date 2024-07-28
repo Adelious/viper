@@ -28,6 +28,6 @@ module.exports = {
 
 			await console.log(`Ready! Logged in as ${client.user.tag}`);
 
-			logMessage(client, "**BOT OPPERATIONNEL** !");
+			logMessage(client, "**BOT OPPERATIONNEL** !", ':blue_square:');
 	},
 };

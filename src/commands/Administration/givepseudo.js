@@ -28,7 +28,7 @@ module.exports = {
     var nom;
     var guild = interaction.guild;
 
-    logMessage(interaction.client, `<@${interaction.user.id}> a utilisé la commande /givepseudo`);
+    logMessage(interaction.client, `<@${interaction.user.id}> a utilisé la commande /givepseudo`, ':green_square:');
 
     guild.members.cache.forEach(async (member) => {
         if(member.user.bot ) return;
@@ -45,10 +45,10 @@ module.exports = {
           const { name } = await response.data;
           await member.setNickname(name, "Renamed");
           nom = await name;
-          logMessage(interaction.client, `<@${member.user.id}> a été renommé`)
+          logMessage(interaction.client, `<@${member.user.id}> a été renommé`, ':blue_square:')
         } else {
           await member.setNickname("Pas de nom RP.", "Renamed");
-          logMessage(interaction.client, `<@${member.user.id}> a été renommé`)
+          logMessage(interaction.client, `<@${member.user.id}> a été renommé`, ':blue_square:')
         }
       } catch (error) {
         await console.error(

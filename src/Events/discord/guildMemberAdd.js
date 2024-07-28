@@ -34,7 +34,7 @@ const { welcomeChannelID, commandeCategoryID, logChannelId} = require("../../con
           console.log(
             `${member.user.username} a rejoint le serveur et à été nommé ${name}.`
           );
-          logMessage(member.client, `<@${member.id} a rejoint le discord et été renommé`);
+          logMessage(member.client, `<@${member.id} a rejoint le discord et été renommé`, ':white_square:');
         } else {
           member.setNickname("Pas de nom RP.", "Renamed");
         }
@@ -47,7 +47,7 @@ const { welcomeChannelID, commandeCategoryID, logChannelId} = require("../../con
       member.user.send(
         ":x: Je ne parviens pas à vous assigner le nom et prénom RP sur le serveur.\nJe vous ai donc ouvert un ticket pour régler cela avec l'administration."
       );
-      logMessage(member.client, `<@${member.id} a rejoint le discord et un ticket a été ouvert`);
+      logMessage(member.client, `<@${member.id} a rejoint le discord et un ticket a été ouvert`, ':white_square:');
 
       // Création d'un ticket
       let ticketChannel = await member.guild.channels.create({

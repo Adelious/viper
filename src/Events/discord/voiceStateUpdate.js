@@ -23,18 +23,18 @@ module.exports = {
 
         // Partie pour les logs
         if (newState.channel && !oldState.channel) {
-            await logMessage(oldState.client, `${newState.member.displayName} a rejoint le salon <#${newState.channel.id}>`);
+            await logMessage(oldState.client, `${newState.member.displayName} a rejoint le salon <#${newState.channel.id}>`, ':purple_square:');
         }
 
         if (!newState.channel && oldState.channel) {
-            await logMessage(oldState.client, `${oldState.member.displayName} a quitté le salon <#${oldState.channel.id}>`);
+            await logMessage(oldState.client, `${oldState.member.displayName} a quitté le salon <#${oldState.channel.id}>`, ':purple_square:');
         }
 
         if (newState.channel && oldState.channel) {
             if (newState.channel.id !== oldState.channel.id) {
-                await logMessage(oldState.client, `${newState.member.displayName} a quitté le salon <#${oldState.channel.id}> et a rejoint <#${newState.channel.id}>`);
+                await logMessage(oldState.client, `${newState.member.displayName} a quitté le salon <#${oldState.channel.id}> et a rejoint <#${newState.channel.id}>`, ':purple_square:');
             } else {
-                await logMessage(oldState.client, `${newState.member.displayName} est toujours dans le salon <#${oldState.channel.id}> mais il y a eu des changements. (mute, partage ...)`);
+                await logMessage(oldState.client, `${newState.member.displayName} est toujours dans le salon <#${oldState.channel.id}> mais il y a eu des changements. (mute, partage ...)`, ':purple_square:');
             }
         }
     },

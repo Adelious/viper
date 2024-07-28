@@ -5,7 +5,7 @@ const { logChannelId } = require("../config.json");
  * @param {string} logMessage - Le message de log à envoyer
  * @returns {Promise<void>}
  */
-async function logMessage(client, logMessage) {
+async function logMessage(client, logMessage, sign) {
     if (!logMessage) {
         throw new Error("Le message de log ne peut pas être vide.");
     }
@@ -15,7 +15,7 @@ async function logMessage(client, logMessage) {
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const formattedTime = `${hours}:${minutes}:${seconds}`;
-    const formattedLog = `${formattedTime} : ${logMessage}`;
+    const formattedLog = `${sign? sign : ""} ${formattedTime} : ${logMessage}`;
 
     // Vérification de client et logChannel
     if (!client) {

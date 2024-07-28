@@ -27,7 +27,7 @@ module.exports = {
 
     if (!targetUser) {
       await interaction.editReply("Cet utilisateur n'existe pas.");
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
 
       return;
     }
@@ -36,7 +36,7 @@ module.exports = {
       await interaction.editReply(
         "Vous ne pouvez pas kick le propriétaire du serveur."
       );
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
 
       return;
     }
@@ -49,7 +49,7 @@ module.exports = {
       await interaction.editReply(
         "Je ne peux pas kick un utilisateur de même ou de rôle suppérieur"
       );
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
 
       return;
     }
@@ -58,7 +58,7 @@ module.exports = {
       await interaction.editReply(
         "Je ne peux pas kick un utilisateur de même ou de rôle suppérieur"
       );
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
 
       return;
     }
@@ -69,11 +69,11 @@ module.exports = {
       await interaction.editReply(
         `L'utilisateur ${targetUser} a été kick\nRaison: ${reason}`
       );
-      logMessage(interaction.client, `<@${interaction.user.id}> a kcik <@${targetUserId}> pour *${reason}*`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a kcik <@${targetUserId}> pour *${reason}*`, ':red_square:');
 
     } catch (error) {
       console.log(`There was an error when kicking: ${error}`);
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de kcik <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
 
     }
   },

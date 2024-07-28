@@ -27,7 +27,7 @@ module.exports = {
 
     if (!targetUser) {
       await interaction.editReply("Cet utilisateur n'existe pas.");
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
 
       return;
     }
@@ -36,7 +36,7 @@ module.exports = {
       await interaction.editReply(
         "Vous ne pouvez pas ban le propriétaire du serveur."
       );
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
 
       return;
     }
@@ -49,7 +49,7 @@ module.exports = {
       await interaction.editReply(
         "Je ne peux pas ban cet utilisateur car il a un rôle égal ou plus élevé que vous"
       );
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
 
       return;
     }
@@ -58,7 +58,7 @@ module.exports = {
       await interaction.editReply(
         "Je ne peux pas ban cet utilisateur car il a un rôle égal ou plus élevé que vous"
       );
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
       return;
     }
 
@@ -68,10 +68,10 @@ module.exports = {
       await interaction.editReply(
         `User ${targetUser} a été banni \nRaison : ${reason}`
       );
-      logMessage(interaction.client, `<@${interaction.user.id}> a ban <@${targetUserId}> pour *${reason}*`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a ban <@${targetUserId}> pour *${reason}*`, ':red_square:');
     } catch (error) {
       console.log(`There was an error when banning: ${error}`);
-      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`);
+      logMessage(interaction.client, `<@${interaction.user.id}> a tenté de ban <@${targetUserId}> pour *${reason}* mais n'a pas réussi !`, ':red_circle:');
     }
   },
 };
