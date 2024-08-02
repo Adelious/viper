@@ -13,6 +13,6 @@ module.exports = {
             );
         }
 
-        logMessage(member.client, `<@${member.id}> a quitté le discord`, ':white_square:');
+        logMessage(member.client, `<@${member.id}> a quitté le discord`, ':white_medium_square:');
 	},
 };
